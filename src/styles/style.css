@@ -5,6 +5,8 @@ body {
     background-color: #f5f5f5;
     padding: 20px;
     margin: 0;
+    justify-content: center; 
+    align-items: center;     
   }
   
   h1 {
@@ -37,16 +39,18 @@ body {
   
   button {
     padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
+    background-color: #0beb12;  
+    color: #4caf50;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
   }
   
+  
   button:hover {
-    background-color: #45a049;
+    background-color: #4caf50;  
+    color: white;
   }
   
   .task-list {
@@ -54,24 +58,32 @@ body {
     padding: 0;
   }
   
+  
   .task-list li {
     display: flex;
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+    word-break: break-word;  
+    white-space: normal;     
   }
-  
+
+ 
   .task-list li span {
     flex: 1;
+    word-break: break-word; 
   }
   
   .task-list li button {
     background-color: #f44336;
     margin-left: 10px;
+    white-space: nowrap; 
+    color: #fff;
   }
   
   .task-list li button:hover {
     background-color: #e53935;
+    color: #fff;
   }
   
   .no-tasks {
