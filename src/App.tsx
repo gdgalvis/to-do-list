@@ -27,7 +27,14 @@ const App: React.FC = () => {
     }
   };
 
-  // Delete 
+  // Handle key press event to add task on Enter key
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      addTask();
+    }
+  };
+
+  // Delete task from the list
   const deleteTask = (id: number) => {
     setTaskList(taskList.filter(task => task.id !== id));
   };
@@ -40,6 +47,7 @@ const App: React.FC = () => {
           type="text"
           value={taskInput}
           onChange={handleInputChange}
+          onKeyDown={handleKeyPress}  // Listen for key presses
           placeholder="Enter your task"
         />
         <button onClick={addTask}>Add</button>
@@ -49,10 +57,10 @@ const App: React.FC = () => {
         {taskList.length === 0 ? (
           <p className="no-tasks">No tasks yet.</p>
         ) : (
-          <ul className="task-list obscure-text "  >
+          <ul className="task-list obscure-text">
             {taskList.map((task) => (
               <li key={task.id}>
-                <span >
+                <span>
                   {task.id}. {task.description}
                 </span>
                 <button onClick={() => deleteTask(task.id)}>Delete</button>
