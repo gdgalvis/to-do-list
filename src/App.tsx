@@ -46,7 +46,11 @@ const App: React.FC = () => {
       setTaskInput('');  // Clear the input after adding
     }
   };
-
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      addTask();
+    }
+  };
   // Delete task by ID
   const deleteTask = (id: number) => {
     setTaskList(taskList.filter(task => task.id !== id));
@@ -60,6 +64,7 @@ const App: React.FC = () => {
           type="text"
           value={taskInput}
           onChange={handleInputChange}
+          onKeyDown={handleKeyPress}
           placeholder="Enter your task"
         />
         <button onClick={addTask}>Add</button>
