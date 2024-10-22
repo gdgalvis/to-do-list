@@ -47,7 +47,7 @@ const App: React.FC = () => {
           type="text"
           value={taskInput}
           onChange={handleInputChange}
-          onKeyDown={handleKeyPress}  // Listen for key presses
+          onKeyDown={handleKeyPress} 
           placeholder="Enter your task"
         />
         <button onClick={addTask}>Add</button>
