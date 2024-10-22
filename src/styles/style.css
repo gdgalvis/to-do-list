@@ -79,3 +79,18 @@ body {
     font-style: italic;
   }
   
+
+  .obscure-text {
+    width: 200px; /* Set the max width according to your layout */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .obscure-text:hover {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }

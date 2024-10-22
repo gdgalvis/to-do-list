@@ -49,10 +49,10 @@ const App: React.FC = () => {
         {taskList.length === 0 ? (
           <p className="no-tasks">No tasks yet.</p>
         ) : (
-          <ul className="task-list">
+          <ul className="task-list obscure-text "  >
             {taskList.map((task) => (
               <li key={task.id}>
-                <span>
+                <span >
                   {task.id}. {task.description}
                 </span>
                 <button onClick={() => deleteTask(task.id)}>Delete</button>
