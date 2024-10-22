@@ -10,12 +10,12 @@ const App: React.FC = () => {
   const [taskInput, setTaskInput] = useState<string>('');  
   const [taskList, setTaskList] = useState<Task[]>([]);     
 
-  // Handle task input change
+  // Update screen
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTaskInput(e.target.value);
   };
 
-  // Add task to the list
+  // Add 
   const addTask = () => {
     if (taskInput.trim()) {
       const newTask: Task = {
